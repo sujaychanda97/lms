@@ -1,0 +1,131 @@
+// GENERAL VARIABLES
+$font-family:                            'brandon-grotesque';
+$font-size:                              14px;
+
+$font-family-base:                       $font-family;
+
+$primary:                                #25ADB1;
+$opacity-primary:                        rgba(37, 173, 177, 0.5);
+$light-prime:                            #04BDDA;
+$border-color:                           #E3E6EA;
+$white:                                  #fff;
+$black:                                  #000;
+$transparent:                            #0000;
+$green:                                  #5ad99c;
+$orange:                                 #deab2c;
+$red:                                    #FF3E3E;
+$error:                                  #FF7067;
+$grey:                                   #999;
+$slate-grey:                             #727E8A;
+$light-grey-blue:                        #F3F6F9;
+$grey-blue:                              #E4E9EE;
+$grayish-blue:                           #e4e7eb;
+$alice-blue:                             #EFF2F5;
+$text-color:                             #43688A;
+$light-text-color:                       #626F7B;
+$light-grey:                             #ffffff80;
+$black-russian:                          #1A202C;
+$cloud-burst:                            #1E3143;
+$light-cloud-burst:                      rgba(30, 49, 67, 0.7);
+$dark-cloud-burst:                       rgba(26, 32, 44, 0.8);
+$light-silver:                           rgba(67, 104, 138, 0.11);
+$caribbean-green:                        #00D0A0;
+$light-red:                              #FFD1D1;
+$light-green:                            #C9EFDD;
+$cyan-blue:                              #0d6efd;
+$cyan-gray:                              #F1F2F4;
+$dark-grayish-blue:                      #212529;
+$Light-steel-blue:                       #B9C8D7;
+$flash-white:                            #f2f4f5;
+$light-white:                            #f1f3f4;
+$hit-grey:                               #adb5bd;
+$selected-bg:                            #7b9ca5;
+$deactivate-row:                         #21252980;
+$pale-blue:                              #dee2e6;
+$light-blue:                             #D6DFE8;
+$platinum:                               #E0E6E9;
+$secondary:                              #B5C2CF;
+$dark-green:                             #0F898C;
+$dark-grey:                              #979898;
+$dark-silver:                            #cccccc;
+
+// PANEL TABS VARIABLES
+$component-bg:                           rgba(227, 230, 234, 0.17);
+$panelbar-bg:                            rgba(227, 230, 234, 0.17);
+$panelbar-header-text:                   rgba(26, 32, 44, 0.7);
+$panelbar-header-bg:                     $border-color;
+$panelbar-header-hovered-bg:             $secondary;
+$panelbar-border-width:                  0;
+$panelbar-item-padding-x:                20px;
+$panelbar-header-focused-shadow:         none;
+
+// GRID/TABLE VARIABLES
+$grid-header-bg:                         #e3e4e5;
+$grid-header-text:                       rgba(67, 104, 138, 0.7);
+$grid-text:                              rgba(67, 104, 138, 1);
+$grid-border-width:                      0;
+$grid-header-padding-x:                  0.5rem;
+$grid-header-padding-y:                  1rem;
+$grid-cell-padding-x:                    0.5rem;
+$grid-cell-padding-y:                    1px;
+$grid-focused-shadow:                    none;
+
+$grid-alt-bg:                            $white;
+$grid-bg:                                $white;
+$grid-footer-bg:                         rgba(227, 230, 234, 0.17);
+$grid-filter-bg:                         rgba(67, 104, 138, 0.2);
+
+// DROPDOWN POPUP VARIABLES
+$popup-bg:                               $white;
+$popup-padding-x:                        0px;
+$popup-padding-y:                        0px;
+$list-item-selected-bg:                  $primary;
+$dropdownlist-bg:                        $white;
+$dropdownlist-hovered-bg:                $white;
+$dropdownlist-focused-bg:                $white;
+$input-font-size:                        $font-size;
+
+// RADIO BUTTON VARIABLES
+$radio-checked-image:                    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23333333'/%3e%3c/svg%3e");
+$radio-bg:                               $white;
+$radio-text:                             $black-russian;
+$radio-checked-bg:                       $white;
+$radio-border:                           $border-color;
+$radio-focused-checked-border:           $border-color;
+$radio-checked-border:                   $border-color;
+$radio-focused-checked-shadow:           none;
+$radio-focused-shadow:                   none;
+$radio-focused-border:                   $border-color;
+$radio-list-horizontal-item-margin-x:    10px;
+$radio-line-height:                      inherit;
+
+// INPUT FIELD VARIABLES
+$input-bg:                               $white;
+$input-placeholder-text:                 rgba(26, 32, 44, 0.5);
+$input-border:                           $border-color;
+
+// PAGER VARIABLES
+$pager-item-bg:                          $transparent;
+$pager-number-selected-bg:               $transparent;
+$pager-number-text:                      $text-color;
+$pager-number-hover-text:                $text-color;
+$pager-number-hover-bg:                  $transparent;
+$pager-number-border:                    #e2e6ea;
+$pager-number-border-radius:             4.18945px;
+$pager-item-hover-bg:                    $transparent;
+$pager-item-selected-text:               #eb996e;
+$pager-item-focus-shadow:                none;
+
+// KENDO SWITCH VARIABLES
+$switch-off-focused-shadow:              none;
+$switch-on-focused-shadow:               none;
+$tabstrip-item-selected-bg:              $transparent;
+
+// PROGRESS BAR VARIABLES
+$progressbar-fill-bg:                    $caribbean-green;
+$progressbar-text:                       $white;
+
+// BOX SHADOW
+$box-shadow:                              0px 2px 10px rgba(123, 156, 165, 0.2);
+$box-outer-shadow:                        4px 4px 4px rgb(185 200 215 / 20%);
+$box-bg-shadow:                           linear-gradient(180deg, rgba(67, 104, 138, 0) 0%, rgba(67, 104, 138, 0.99) 100%);

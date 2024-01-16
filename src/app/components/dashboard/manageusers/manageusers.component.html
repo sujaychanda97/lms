@@ -1,0 +1,41 @@
+<div class="mt-4">
+    <table id="dataTable" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData; let i = index">
+          <td>{{ i+1 }}</td>
+          <td contenteditable="true" (input)="onEdit($event, i, 'user_name')">{{ row.user_name }}</td>
+          <td contenteditable="true" (input)="onEdit($event, i, 'user_email')">{{ row.user_email }}</td>
+          <td contenteditable="false" (input)="onEdit($event, i, 'role')">{{ row.role_id === 1 ? 'Admin' : (row.role_id === 2 ? 'Educator' : (row.role_id === 3 ? 'Learner' : '')) }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary mr-1" (click)="saveRow(i)">Save</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteRow(i)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input disabled type="text" class="form-control"/></td>
+          <td><input type="text" class="form-control" [(ngModel)]="newRow.user_name"/></td>
+          <td><input type="text" class="form-control" [(ngModel)]="newRow.user_email"/></td>
+          <td>
+            <select class="form-control" [(ngModel)]="newRow.role_id">
+              <option value="1">Admin</option>
+              <option value="2">Educator</option>
+              <option value="3">Learner</option>
+            </select>
+          </td>
+          <td><button class="btn btn-sm btn-success" (click)="addRow()">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+   

@@ -1,0 +1,32 @@
+<div class="mt-4">
+    <table id="dataTable" class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Course Name</th>
+          <th>Topic Name</th>
+          <th>Topic Link</th>
+          <th class="action-th">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData; let i = index">
+          <td>{{ i+1 }}</td>
+          <td contenteditable="false" (input)="onEdit($event, i, 'course_name')">{{ row.course_name }}</td>
+          <td contenteditable="true" (input)="onEdit($event, i, 'topic_name')">{{ row.topic_name }}</td>
+          <td contenteditable="true" (input)="onEdit($event, i, 'topic_link')">{{ row.topic_link }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary mr-1" (click)="saveRow(i)">Save</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteRow(i)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" disabled/></td>
+          <td><input type="text" class="form-control" [(ngModel)]="newRow.course_name"/></td>
+          <td><input type="text" class="form-control" [(ngModel)]="newRow.topic_name"/></td>
+          <td><input type="text" class="form-control" [(ngModel)]="newRow.topic_link"/></td>
+          <td><button class="btn btn-sm btn-success" (click)="addRow()">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,75 @@
+<div class="mt-4">
+  <table id="dataTable" class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>No. of Topics</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of tableData; let i = index">
+        <td>{{ i+1 }}</td>
+        <td contenteditable="false">{{ row.course_name }}</td>
+        <td contenteditable="false">{{ row.total_topics }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#topicModal" (click)="onEdit(row)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#topicModal">Add New Course</button>
+  </div>
+</div>
+  
+<!-- Modal -->
+<div class="modal fade" id="topicModal" tabindex="-1" role="dialog" aria-labelledby="topicModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center" id="topicModalLabel">Manage topics under course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="dataTable" class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Topic Name</th>
+              <th>Topic Link</th>
+              <th class="action-th">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of topicTableData; let i = index">
+              <td contenteditable="false" (input)="onTopicEdit($event, i, 'course_name')">{{ row.course_name }}</td>
+              <td contenteditable="true" (input)="onTopicEdit($event, i, 'topic_name')">{{ row.topic_name }}</td>
+              <td contenteditable="true" (input)="onTopicEdit($event, i, 'topic_link')">{{ row.topic_link }}</td>
+              <td>
+                <button class="btn btn-sm btn-primary mr-1" (click)="saveTopicRow(i)">Save</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteTopicRow(i)">Delete</button>
+              </td>
+            </tr>
+            <tr *ngIf="!isEditable">
+              <td><input type="text" class="form-control" [(ngModel)]="newTopicRow.course_name"/></td>
+              <td><input type="text" class="form-control" [(ngModel)]="newTopicRow.topic_name"/></td>
+              <td><input type="text" class="form-control" [(ngModel)]="newTopicRow.topic_link"/></td>
+              <td><button class="btn btn-sm btn-success" (click)="addTopicRow()">Add</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+

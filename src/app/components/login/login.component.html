@@ -1,0 +1,83 @@
+<div class="vh-100">
+    <div class="container py-5 h-100 background-image">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body py-4 px-5 text-center">
+              <form name="loginForm" [formGroup]="loginForm">
+                <img class="logo mb-2" src="assets/images/logo.png" alt="logo"/>
+                <div class="show-message mb-3">{{showMessage}}</div>
+    
+                <div class="form-outline mb-4">
+                  <input placeholder="name@example.com" 
+                    type="email" 
+                    id="typeEmailX-2" 
+                    class="form-control form-control-lg"
+                    [ngClass]="{'errorboxborder': showEmailBorder()}"
+                    formControlName="emailtextbox"
+                  />
+
+                  <div class="errorbox">
+                    <label *ngIf="loginForm.controls['emailtextbox'].hasError('required') 
+                    && loginForm.controls['emailtextbox'].touched">
+                      <i class="fa fa-exclamation-triangle red mr-1"></i>Email is required.
+                    </label>
+                    <label *ngIf="!validateEmail()">
+                      <i class="fa fa-exclamation-triangle red mr-1"></i>Incorrect email format.
+                    </label>
+                  </div>
+
+                </div>
+    
+                <div class="form-outline mb-4">
+                  <input placeholder="password" 
+                    type="password" 
+                    id="typePasswordX-2" 
+                    class="form-control form-control-lg" 
+                    (keypress)="errorMsgShow($event)" 
+                    #password 
+                    id="passwordtextbox"
+                    [ngClass]="{'errorboxborder': showPasswordBorder()}" 
+                    formControlName="passwordtextbox"
+                  />
+
+                  <!-- <button class="type-toggle" (click)="showPassword()">
+                    <i [ngClass]="password.type === 'text' ? 'fa fa-eye' : 'fa fa-eye-slash'" aria-hidden="true"></i>
+                  </button> -->
+
+                  <!-- TBD -->
+                  <div class="errorbox">
+                    <label *ngIf="loginForm.controls['passwordtextbox'].touched &&
+                    loginForm.controls['passwordtextbox'].hasError('required')">
+                      <i class="fa fa-exclamation-triangle red mr-1"></i>Password is required.
+                    </label>
+          
+                    <!-- TBD -->
+                    <label *ngIf="loginForm.controls['passwordtextbox'].touched
+                    && loginForm.controls['passwordtextbox'].hasError('minlength')">
+                      <i class="fa fa-exclamation-triangle red mr-1"></i>Password must be in six numbers.
+                    </label>
+            
+                    <!-- TBD -->
+                    <label *ngIf="errorMsg !== '' && errorMsg === !loginForm.controls['passwordtextbox'].hasError('minlength')">
+                      <i class="fa fa-exclamation-triangle red mr-1"></i>Wrong password.
+                    </label>
+                  </div>
+
+                </div>
+    
+                <!-- Checkbox -->
+                <!-- <div class="form-check d-flex justify-content-start mb-4">
+                  <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                  <label class="form-check-label" for="form1Example3"> Remember password </label>
+                </div> -->
+    
+                <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="doLogin()">Login</button>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

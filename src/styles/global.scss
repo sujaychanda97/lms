@@ -1,0 +1,36 @@
+@import "variables";
+
+.errorboxborder {
+  border: 1px solid $red;
+}
+
+.show-message {
+  height: 20px;
+  color: $red;
+}
+
+.logo {
+  width: 60px;
+}
+
+/* SCSS FOR ERRORBOX */
+.errorbox{
+  text-align: left;
+  position: relative;
+  height: 20px;
+  margin-bottom: 14px;
+  margin-top: 5px;
+  label
+  {
+    font-size: $font-size;
+    color: $red !important;
+    .k-icon
+    {
+      font-size: 12px;
+      width: 12px !important;
+      margin-top: -2px;
+      margin-right: 5px;
+    }
+  }
+
+}
